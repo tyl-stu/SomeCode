@@ -11,6 +11,16 @@ void display(vector<int> &v)
 	cout << endl;
 }
 
+void reverse(vector<int>& nums, int start, int end)
+{
+	while (start < end)
+	{
+		swap(nums[start], nums[end]);
+		start++;
+		end--;
+	}
+}
+
 void rotate(vector<int>& nums, int k) {
 	/* 方法1 -- 超时 */
 	//while (k--)
@@ -40,7 +50,7 @@ void rotate(vector<int>& nums, int k) {
 	}*/
 
 	/* 方法三 -- 用新的数组进行操作 */
-	vector<int> newArr(nums.size());
+	/*vector<int> newArr(nums.size());
 	for (int i = 0; i < nums.size(); i++)
 	{
 	newArr[(i + k) % nums.size()] = nums[i];
@@ -48,7 +58,24 @@ void rotate(vector<int>& nums, int k) {
 	nums.assign(newArr.begin(), newArr.end());
 	cout << "\n现数组：";
 	display(nums);
-	cout << "\n";
+	cout << "\n";*/
+
+	/*方法四 -- 在原数组上进行操作*/
+	k %= nums.size();
+	if (k != 0)
+	{
+		//先小部分翻转，再大部分翻转
+		/*reverse(nums, 0, nums.size() - k - 1);
+		reverse(nums, nums.size() - k, nums.size() - 1);
+		reverse(nums, 0, nums.size() - 1);*/
+		//先大部分翻转，再小部分翻转
+		reverse(nums, 0, nums.size() - 1);
+		reverse(nums, 0, k - 1);
+		reverse(nums, k, nums.size() - 1);
+	}
+	cout << "\n现数组：";
+	display(nums);
+	cout << "\n"; 
 }
 
 void test()

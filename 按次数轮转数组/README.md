@@ -177,7 +177,78 @@
 
 运行结果：<br>
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/a61ce73012664382b617cae86d56925d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP5by6fg==,size_20,color_FFFFFF,t_70,g_se,x_16)
-### 1.2.1 其他方法
+### 1.2.2 基于数组本身
+具体思路如图
+![在这里插入图片描述](https://img-blog.csdnimg.cn/b914dacff8e74c0aba09cb7cc477b696.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP5by6fg==,size_20,color_FFFFFF,t_70,g_se,x_16)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/719fcadf8a9545ac8e1c575f11c10f8c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP5by6fg==,size_20,color_FFFFFF,t_70,g_se,x_16)
+代码如下：
+	
+	
+	#include<iostream>
+	#include<vector>
+	#include<stack>
+	
+	using namespace std;
+	
+	void display(vector<int> &v)
+	{
+		for (int i = 0; i < v.size(); i++)
+			std::cout << v[i] << " ";
+		cout << endl;
+	}
+	
+	void reverse(vector<int>& nums, int start, int end)
+	{
+		while (start < end)
+		{
+			swap(nums[start], nums[end]);
+			start++;
+			end--;
+		}
+	}
+	
+	void rotate(vector<int>& nums, int k) {
+			/*方法四 -- 在原数组上进行操作*/
+		k %= nums.size();
+		if (k != 0)
+		{
+			//下述两种皆可实现目标
+			//先小部分翻转，再大部分翻转
+			/*reverse(nums, 0, nums.size() - k - 1);
+			reverse(nums, nums.size() - k, nums.size() - 1);
+			reverse(nums, 0, nums.size() - 1);*/
+			//先大部分翻转，再小部分翻转
+			reverse(nums, 0, nums.size() - 1);
+			reverse(nums, 0, k - 1);
+			reverse(nums, k, nums.size() - 1);
+		}
+		cout << "\n现数组：";
+		display(nums);
+		cout << "\n"; 
+	}
+	
+	void test()
+	{
+		// 插入数据
+		vector<int> nums;
+		for (int i = 1; i < 8; i++)
+			nums.push_back(i);
+		cout << "\n原数组：";
+		display(nums);
+	
+		rotate(nums, 3);
+	}
+	
+	int main()
+	{
+		test();
+		system("pause");
+		return 0;
+	}
+	
+运行结果：
+![在这里插入图片描述](https://img-blog.csdnimg.cn/c3c4eef1b7084ceca8240d5c0e012867.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP5by6fg==,size_20,color_FFFFFF,t_70,g_se,x_16)
+### 1.2.3 其他方法
 后续复习时再补上其他算法！
 
 # 2、总结
