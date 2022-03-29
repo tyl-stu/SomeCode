@@ -1,5 +1,6 @@
 作文以记之 ~ 排序-原地交换
 =
+其他内容可点击 [同款博客](https://blog.csdn.net/m0_51961114/article/details/123753492?spm=1001.2014.3001.5502) 进行查看！
 # 1、算法流程
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c37405cf4d5a4e9abd3d772d01b8a160.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP5by6fg==,size_20,color_FFFFFF,t_70,g_se,x_16)
 
