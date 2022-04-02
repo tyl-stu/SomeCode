@@ -15,20 +15,34 @@ void showmatrix(vector<vector<int>>& matrix)
 	cout << endl;
 }
 
+/* 方法1：通过规律 */
+//void rotate(vector<vector<int>>& matrix) {
+//	int n = matrix.size();
+//	for (int i = 0; i<(n / 2); i++)
+//	{
+//		//for(int j = 0;j<(n+1)/2;j++)
+//		for (int j = i; j<(n - 1 - i); j++)
+//		{
+//			int tmp = matrix[i][j];
+//			matrix[i][j] = matrix[n - 1 - j][i];
+//			matrix[n - 1 - j][i] = matrix[n - 1 - i][n - j - 1];
+//			matrix[n - 1 - i][n - 1 - j] = matrix[j][n - i - 1];
+//			matrix[j][n - i - 1] = tmp;
+//		}
+//	}
+//}
+
+/* 方法2：先上下交换，再按右斜对角线交换*/
 void rotate(vector<vector<int>>& matrix) {
 	int n = matrix.size();
-	for (int i = 0; i<(n / 2); i++)
-	{
-		//for(int j = 0;j<(n+1)/2;j++)
-		for (int j = i; j<(n - 1 - i); j++)
-		{
-			int tmp = matrix[i][j];
-			matrix[i][j] = matrix[n - 1 - j][i];
-			matrix[n - 1 - j][i] = matrix[n - 1 - i][n - j - 1];
-			matrix[n - 1 - i][n - 1 - j] = matrix[j][n - i - 1];
-			matrix[j][n - i - 1] = tmp;
-		}
-	}
+	//先上下交换
+	for (int i = 0; i < (n / 2); i++)
+		swap(matrix[i], matrix[n-1 - i]);
+	//按右斜对角线交换
+	for (int i = 0; i < n; i++)
+		for (int j = i; j < n; j++)
+			swap(matrix[i][j], matrix[j][i]);
+
 }
 
 void test()

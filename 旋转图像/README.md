@@ -75,5 +75,67 @@
 ### 2.2.3 运行结果
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/ec516e889ee749cc940460a3535630e9.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP5by6fg==,size_20,color_FFFFFF,t_70,g_se,x_16)
 ## 2.2 利用翻转
-该种方法即先将数组上下翻转，然后将其按照对角线进行翻转，此处暂时不想实现该方法，具体后面有时间就补上！
+### 2.2.1 思路
+这个思路主要是先将数组上下交换，然后再按右对角线进行交换，便可实现矩阵的翻转！如图
+![在这里插入图片描述](https://img-blog.csdnimg.cn/84aa5896285449f08e1881dab4c51c49.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP5by6fg==,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+### 2.2.2 程序代码
+
+
+	#include<iostream>
+	#include<vector>
+	using namespace std;
+	
+	void showmatrix(vector<vector<int>>& matrix)
+	{
+		for (int i = 0; i < matrix.size(); i++)
+		{
+			for (int j = 0; j < matrix[0].size(); j++)
+			{
+				cout << matrix[i][j] << " ";
+			}
+			cout << endl;
+		}
+		cout << endl;
+	}
+	
+	/* 方法2：先上下交换，再按右斜对角线交换*/
+	void rotate(vector<vector<int>>& matrix) {
+		int n = matrix.size();
+		//先上下交换
+		for (int i = 0; i < (n / 2); i++)
+			swap(matrix[i], matrix[n-1 - i]);
+		//按右斜对角线交换
+		for (int i = 0; i < n; i++)
+			for (int j = i; j < n; j++)
+				swap(matrix[i][j], matrix[j][i]);
+	}
+	
+	void test()
+	{
+		// 定义数独
+		vector<vector<int>> matrix = {
+			{5, 1, 9, 11}, 
+			{2, 4, 8, 10}, 
+			{13, 3, 6, 7}, 
+			{15, 14, 12, 16} };
+	
+		cout << "\n翻转前：" << endl;
+		showmatrix(matrix);
+		cout << "\n翻转后：" << endl;
+		rotate(matrix);
+		showmatrix(matrix);
+		cout << endl;
+	}
+	
+	int main()
+	{
+		test();
+		system("pause");
+		return 0;
+	}
+
+### 2.2.3 运行结果
+![在这里插入图片描述](https://img-blog.csdnimg.cn/00e45ca3aace4e2d99a7620445cbd571.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP5by6fg==,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 
