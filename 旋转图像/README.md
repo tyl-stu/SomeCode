@@ -72,7 +72,7 @@
 		return 0;
 	}
 
-### 2.2.3 运行结果
+### 2.1.3 运行结果
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/ec516e889ee749cc940460a3535630e9.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP5by6fg==,size_20,color_FFFFFF,t_70,g_se,x_16)
 ## 2.2 利用翻转
 ### 2.2.1 思路
