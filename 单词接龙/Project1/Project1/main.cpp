@@ -32,7 +32,40 @@ public:
 		}
 	}
 
- 	int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
+	/* 单边BFS */
+ //	int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
+	//	for (string& word : wordList) {
+	//		addEdge(word);
+	//	}
+	//	addEdge(beginWord);
+	//	if (!wordId.count(endWord)) {
+	//		return 0;
+	//	}
+	//	vector<int> dis(nodeNum, INT_MAX);
+	//	int beginId = wordId[beginWord], endId = wordId[endWord];
+	//	dis[beginId] = 0;
+
+	//	queue<int> que;
+	//	que.push(beginId);
+	//	while (!que.empty()) {
+	//		int x = que.front();
+	//		que.pop();
+	//		if (x == endId) {
+	//			return dis[endId] / 2 + 1;
+	//		}
+	//		for (int& it : edge[x]) {
+	//			if (dis[it] == INT_MAX) //此语句是用来判断当前对应的字母是否调用过-- dis对应了edge中，以及wordID中各字母的情况
+	//			{
+	//				dis[it] = dis[x] + 1;
+	//				que.push(it);
+	//			}
+	//		}
+	//	}
+	//	return 0;
+	//}
+
+	/* 双边BFS */
+	int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
 		for (string& word : wordList) {
 			addEdge(word);
 		}
@@ -40,26 +73,60 @@ public:
 		if (!wordId.count(endWord)) {
 			return 0;
 		}
-		vector<int> dis(nodeNum, INT_MAX);
-		int beginId = wordId[beginWord], endId = wordId[endWord];
-		dis[beginId] = 0;
 
-		queue<int> que;
-		que.push(beginId);
-		while (!que.empty()) {
-			int x = que.front();
-			que.pop();
-			if (x == endId) {
-				return dis[endId] / 2 + 1;
-			}
-			for (int& it : edge[x]) {
-				if (dis[it] == INT_MAX) {
-					dis[it] = dis[x] + 1;
-					que.push(it);
+		int beginId = wordId[beginWord], endId = wordId[endWord];
+
+		vector<int> disBegin(nodeNum, INT_MAX);
+		disBegin[beginId] = 0;
+		queue<int> queBegin;
+		queBegin.push(beginId);
+
+		vector<int> disEnd(nodeNum, INT_MAX);
+		disEnd[endId] = 0;
+		queue<int> queEnd;
+		queEnd.push(endId);
+
+		while (!queBegin.empty() && !queEnd.empty())
+		{
+			int queBeginSize = queBegin.size();
+			while(queBeginSize)
+			{
+				int tmp = queBegin.front();
+				queBegin.pop();
+				if (disEnd[tmp] != INT_MAX)
+					return (disBegin[tmp] + disEnd[tmp]) / 2 + 1;
+				for (int& it : edge[tmp])
+				{
+					if (disBegin[it] == INT_MAX)
+					{
+						queBegin.push(it);
+						disBegin[it] = disBegin[tmp] + 1;
+					}
 				}
+				queBeginSize--;
+			}
+
+			int queEndSize = queEnd.size();
+			while (queEndSize)
+			{
+				int tmp2 = queEnd.front();
+				queEnd.pop();
+				if (disBegin[tmp2] != INT_MAX)
+					return (disBegin[tmp2] + disEnd[tmp2]) / 2 + 1;
+				for (int& it2 : edge[tmp2])
+				{
+					if (disEnd[it2] == INT_MAX)
+					{
+						queEnd.push(it2);
+						disEnd[it2] = disEnd[tmp2] + 1;
+					}
+				}
+				queEndSize--;
 			}
 		}
 		return 0;
+
+		
 	}
 };
 
