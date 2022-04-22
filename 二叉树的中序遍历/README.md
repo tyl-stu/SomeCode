@@ -5,6 +5,9 @@
 
 具体博客内容可 [点击此处](https://blog.csdn.net/m0_51961114/article/details/124323488) 进行查看！
 
+二叉树的前序遍历可 [点击此处](https://blog.csdn.net/m0_51961114/article/details/124352816) 进行查看！
+二叉树的后序遍历可 [点击此处](https://blog.csdn.net/m0_51961114/article/details/124353170) 进行查看！
+
 # 1、题目描述
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c35955d4ecda4159b809a18e33d44d51.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP5by6fg==,size_20,color_FFFFFF,t_70,g_se,x_16)
 
