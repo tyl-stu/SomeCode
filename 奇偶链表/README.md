@@ -4,6 +4,7 @@
 本题是力扣上 [328. 奇偶链表](https://leetcode-cn.com/problems/odd-even-linked-list/) 的题解，题目难度中等，在此记载一下自己的解题方法！
 
 相关博客可 [点击此处](https://blog.csdn.net/m0_51961114/article/details/124183381) 进行查看！
+
 # 1、题目描述
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/b452a77113f94232a5dc6a74f8937db2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP5by6fg==,size_20,color_FFFFFF,t_70,g_se,x_16)
 
