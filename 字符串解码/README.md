@@ -3,7 +3,7 @@
 # 0、前言
 本篇博客是力扣上 [394. 字符串解码](https://leetcode-cn.com/problems/decode-string/) 题的题解，题目难度还可以，挺有意思的，写博客主要是想记录一下！
 
-具体博客内容可 [点击此处](https://blog.csdn.net/m0_51961114/article/details/124516982?csdn_share_tail=%7B%22type%22%3A%22blog%22%2C%22rType%22%3A%22article%22%2C%22rId%22%3A%22124516982%22%2C%22source%22%3A%22m0_51961114%22%7D&ctrtid=ch50X) 进行查看！
+具体博客内容可 [点击此处](https://blog.csdn.net/m0_51961114/article/details/124517278) 进行查看！
 
 
 # 1、题目描述
