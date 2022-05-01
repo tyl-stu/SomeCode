@@ -3,6 +3,8 @@
 # 0、前言
 本篇博客是力扣上 [200. 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) 题的一篇题解，写下这篇博客主要是想通过这个题的题解来记录在练习 **广度优先搜索算法(`Breadth-First-Search`,缩写为 `BFS`)** 和 **深度优先搜索算法(`Depth-First-Search`,缩写为 `DFS`)** 两种算法的代码应用！
 
+如果上手此篇博客中的题目有点困难，可点击查看博客 [作文以记之 ~ 图像渲染](https://blog.csdn.net/m0_51961114/article/details/124533815) ，此博客中的题是本篇博客中题的基础，可先练习简单的，再上手这个题！
+
 相关博客可 [点击此处](https://blog.csdn.net/m0_51961114/article/details/124217986) 进行查看！
 
 # 1、简单说明
