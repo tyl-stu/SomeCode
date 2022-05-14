@@ -1,7 +1,7 @@
 作文以记之 ~ 外观数列
 =
 # 0、前言
-这是力扣上 [38. 外观数列](https://leetcode.cn/problems/count-and-say/) 题的题解，题目简单，写博客主要是记录两个题解~
+这是力扣上 [38. 外观数列](https://leetcode.cn/problems/count-and-say/) 题的题解，题目挺简单，写博客主要是记录两个题解~
 
 具体博客内容可 [点击此处](https://blog.csdn.net/m0_51961114/article/details/124739615) 进行查看！
 
