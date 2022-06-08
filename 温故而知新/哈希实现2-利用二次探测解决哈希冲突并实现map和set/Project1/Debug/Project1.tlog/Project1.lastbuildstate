@@ -1,0 +1,2 @@
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+Debug|Win32|E:\vs-try\温故而知新\哈希表\实现哈希结构\利用线性探测解决哈希冲突 - 副本\|
