@@ -1,5 +1,6 @@
 作文以记之 ~ 汉明距离
 =
+
 # 0、前言
 本篇博客是力扣上 [461. 汉明距离](https://leetcode.cn/problems/hamming-distance/) 题的题解，很简单的一个题，写博客主要是因为~就是想写！
 
